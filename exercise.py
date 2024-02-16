@@ -1,6 +1,3 @@
-
-import fileinput as file
-from operator import le
 import random as rand
 
 
