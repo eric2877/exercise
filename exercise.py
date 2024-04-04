@@ -14,16 +14,16 @@ def generate_exercise(num, num_line):
             d = a -b
         else:
             d = a + b
-        if d >20 :
+        if d >20 or a == 10 or b ==10 or d == 10 or (a > 10 and b >10)or(a>10 and d >10)or(b >10 and d>10) or (a<10 and b <10 and d <10):
             continue
         s = str(a)
         s += " - " if c == 2 and a > b else " + "
         s += str(b)
         s += " ="
-        if s in arr :
-            continue
-        else:
-            arr.append(s)
+        # if s in arr :
+        #     continue
+        # else:
+        arr.append(s)
 
     index = 1
     list2 = []
@@ -69,7 +69,7 @@ def generate_combine(num, num_line):
     for s in arr :
         if index < col:
             index += 1
-            s += '\t'
+            s += ' '*(18 - len(s))
         else :
             s += '\n'
             index= 1
@@ -79,6 +79,6 @@ def generate_combine(num, num_line):
 
 if __name__ == '__main__':
     with open("output.txt", 'w') as target:
-        target.write(generate_exercise(100, 20))
-        # target.write(generate_combine(20, 5))
+        target.write(generate_exercise(90, 18))
+        target.write(generate_combine(8, 2))
     
